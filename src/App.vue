@@ -3,7 +3,9 @@
     <router-link to="/" class="navbar-logo">GroceLine</router-link>
     <router-link v-for="link in navLinks" :to="link.route" :key="link.id" class="navbar-item">{{ link.name }}</router-link>
   </div>
-  <router-view />
+  <div class="container">
+    <router-view />
+  </div>
 </template>
 
 <script>
@@ -19,7 +21,6 @@ export default {
         { id: 6, route: 'signup', name: 'Signup'},
         { id: 7, route: 'login', name: 'Login'},
       ],
-      activePage: 1
     }
   },
   methods: {
@@ -30,18 +31,22 @@ export default {
 
 <style>
 #app {
-  text-align: center;
+  text-align: center
+}
+
+body {
+  margin: 0;
+  font-family: "Comfortaa";
+}
+
+.container{
+  margin: 0 5rem;
 }
 
 #nav a.router-link-exact-active {
   /* color: #42b983; */
   color: #93c47dff;
   background-color: white;
-}
-
-body {
-  margin: 0;
-  font-family: "Comfortaa";
 }
 
 @font-face {
@@ -60,7 +65,7 @@ body {
 
 @media screen and (max-width: 1000px) {
   body {
-    background-color: pink;
+    /*code if the screen is smaller than 1000px*/
   }
 }
 
@@ -122,12 +127,6 @@ body {
 
 /* highlights navbar item on hover */
 .navbar-item:hover {
-  color: #93c47dff;
-  background-color: white;
-}
-
-/* highlights current active navbar tab*/
-.active {
   color: #93c47dff;
   background-color: white;
 }

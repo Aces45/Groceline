@@ -3,17 +3,17 @@
     <a href="index.html" class="navbar-item" v-for="item in navitems" :class="item.class" :id="item.id" >{{ item.name }}</a>
   </div> -->
   <div class="main">
-    <div class="carousel carousel--full-width carousel--prev-next-small-outside flickity-enabled is-draggable" data-flickity="" tabindex="0">
+    <div class="carousel carousel--full-width carousel--prev-next-small-outside flickity-enabled is-draggable" data-flickity="" tabindex="0" >
       <div class="carousel-cell"><img src="../assets/logo.png" /></div>
       <div class="carousel-cell"><img src="../assets/logo.png" /></div>
       <div class="carousel-cell"><img src="../assets/logo.png" /></div>
       <button class="flickity-prev-next-button"></button>
     </div>
-
     <!-- <div class="item-carousel" style="height: 550px; width: 1000px">
       <h3>Insert image</h3>
     </div> -->
     <div class="break"></div>
+
     <div class="item-box">
       <div class="text">
         <h2>The Problem</h2>
@@ -61,6 +61,7 @@ export default {
   name: 'Home',
   components: []
 }
+
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity(elem, {
   // options
