@@ -85,12 +85,6 @@ body {
     background-color: white;
 }
 
-/* highlights current active navbar tab*/
-.active {
-    color: #93c47dff;
-    background-color: white;
-}
-
 .navbar-logo {
     font-family: 'Rockwell';
     margin-right: auto;
@@ -101,6 +95,7 @@ body {
 }
 
 .text {
+    color: white;
     font-size: 1.3rem;
     text-indent: 50px;
     text-align: justify;

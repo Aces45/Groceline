@@ -1,7 +1,7 @@
 <template>
   <div class="navbar" id="nav">
     <router-link to="/" class="navbar-logo">GroceLine</router-link>
-    <router-link v-for="link in navLinks" :to="link.route" :key="link.id" class="navbar-item">{{ link.name }}</router-link>
+    <router-link v-for="link in navLinks" :to="link.route" :key="link.id" class="navbar-item" >{{ link.name }}</router-link >
   </div>
   <div class="container">
     <router-view />
@@ -13,13 +13,13 @@ export default {
   data() {
     return {
       navLinks: [
-        { id: 1, route: '/', name: 'Home'},
-        { id: 2, route: 'shop', name: 'Shop'},
-        { id: 3, route: 'cart', name: 'Cart'},
-        { id: 4, route: 'about', name: 'About'},
-        { id: 5, route: 'profile', name: 'Profile'},
-        { id: 6, route: 'signup', name: 'Signup'},
-        { id: 7, route: 'login', name: 'Login'},
+        { id: 1, route: '/', name: 'Home' },
+        { id: 2, route: 'shop', name: 'Shop' },
+        { id: 3, route: 'cart', name: 'Cart' },
+        { id: 4, route: 'about', name: 'About' },
+        { id: 5, route: 'profile', name: 'Profile' },
+        { id: 6, route: 'signup', name: 'Signup' },
+        { id: 7, route: 'login', name: 'Login' },
       ],
     }
   },
@@ -31,16 +31,31 @@ export default {
 
 <style>
 #app {
-  text-align: center
+  text-align: center;
+}
+
+h1 {
+  color: rgb(82, 82, 82);
+}
+
+html {
+  height: 100%;
 }
 
 body {
   margin: 0;
+  height: 100%;
   font-family: "Comfortaa";
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(white, #93c47dff);
 }
 
-.container{
+.container {
+  justify-content: center;
   margin: 0 5rem;
+  padding-top: 50px;
+  height: 100%;
 }
 
 #nav a.router-link-exact-active {
@@ -64,7 +79,8 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
-  body {
+  body{
+
     /*code if the screen is smaller than 1000px*/
   }
 }
@@ -132,12 +148,12 @@ body {
 }
 
 .navbar-logo {
-  font-family: "Rockwell";
   margin-right: auto;
   font-size: 2em;
-  color: white !important;
-  text-decoration: none;
   user-select: none;
+  text-decoration: none;
+  font-family: "Rockwell";
+  color: white !important;
   background: none !important;
 }
 
@@ -155,5 +171,9 @@ body {
 
 .text li {
   text-indent: 0;
+}
+
+ul {
+  list-style-type: "> ";
 }
 </style>

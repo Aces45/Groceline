@@ -16,6 +16,9 @@ export default {
 </script>
 
 <style>
+hr{
+  border: 1px solid rgb(177, 177, 177)
+}
 .itemCard{
 
 }
