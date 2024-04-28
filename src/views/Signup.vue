@@ -22,9 +22,6 @@
     />
     <p v-if="passwordError" class="error">{{ passwordError }}</p>
 
-    <br />
-    <router-link to="signup"> Forgot password? </router-link>
-    <br />
     <button>Signup</button>
   </form>
 </template>
