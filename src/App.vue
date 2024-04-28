@@ -1,28 +1,28 @@
 <template>
-  <div class="navbar">
+  <div class="navbar" id="nav">
     <router-link to="/" class="navbar-logo">GroceLine</router-link>
     <router-link v-for="link in navLinks" :to="link.route" :key="link.id" class="navbar-item">{{ link.name }}</router-link>
   </div>
-  <router-view/>
+  <router-view />
 </template>
 
 <script>
-export default{
-  data(){
-    return{
-      navLinks:[
-        {id: 1, route:'/', name: 'Home'},
-        {id: 2, route:'shop', name: 'Shop'},
-        {id: 3, route:'cart', name: 'Cart'},
-        {id: 4, route:'about', name: 'About'},
-        {id: 5, route:'profile', name: 'Profile'},
-        {id: 6, route:'signup', name: 'Signup'},
-        {id: 7, route:'login', name: 'Login'},
-      ]
+export default {
+  data() {
+    return {
+      navLinks: [
+        { id: 1, route: '/', name: 'Home'},
+        { id: 2, route: 'shop', name: 'Shop'},
+        { id: 3, route: 'cart', name: 'Cart'},
+        { id: 4, route: 'about', name: 'About'},
+        { id: 5, route: 'profile', name: 'Profile'},
+        { id: 6, route: 'signup', name: 'Signup'},
+        { id: 7, route: 'login', name: 'Login'},
+      ],
+      activePage: 1
     }
   },
-  methods:{
-
+  methods: {
   }
 }
 </script>
@@ -33,134 +33,128 @@ export default{
   text-align: center;
 }
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+#nav a.router-link-exact-active {
+  /* color: #42b983; */
+  color: #93c47dff;
+  background-color: white;
 }
 
 body {
-    margin: 0;
-    font-family: 'Comfortaa';
+  margin: 0;
+  font-family: "Comfortaa";
 }
 
 @font-face {
-    font-family: "Rockwell";
-    src: url("~@/assets/fonts/Rockwell.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Rockwell";
+  src: url("~@/assets/fonts/Rockwell.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Comfortaa";
-    src: url("~@/assets/fonts/Comfortaa-VariableFont_wght.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Comfortaa";
+  src: url("~@/assets/fonts/Comfortaa-VariableFont_wght.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @media screen and (max-width: 1000px) {
-    body {
-        background-color: pink;
-    }
+  body {
+    background-color: pink;
+  }
 }
 
 /* acts as linebreak in between divs */
 .break {
-    flex-basis: 100%;
-    height: 0;
+  flex-basis: 100%;
+  height: 0;
 }
 
 .main {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px 75px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px 75px;
 }
 
 .item-carousel {
-    margin: 1%;
-    border: 2px solid black;
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-    width: 350px;
+  margin: 1%;
+  border: 2px solid black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 350px;
 }
 
 .item-box {
-    height: auto;
-    width: 25%;
+  height: auto;
+  width: 25%;
 }
 
 .navbar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 0.5%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5%;
 
-    padding: 0 1%;
-    background-color: #93C47D;
+  padding: 0 1%;
+  background-color: #93c47d;
 }
 
 .navbar-item {
-    height: 60px;
-    padding: 0 10px;
-    border-radius: 30px 30px 0 0;
+  height: 60px;
+  padding: 0 10px;
+  border-radius: 30px 30px 0 0;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    color: white;
-    font-size: 1.3rem;
-    text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
 
-    transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 /* highlights navbar item on hover */
 .navbar-item:hover {
-    color: #93c47dff;
-    background-color: white;
+  color: #93c47dff;
+  background-color: white;
 }
 
 /* highlights current active navbar tab*/
 .active {
-    color: #93c47dff;
-    background-color: white;
+  color: #93c47dff;
+  background-color: white;
 }
 
 .navbar-logo {
-    font-family: 'Rockwell';
-    margin-right: auto;
-    font-size: 2em;
-    color: white;
-    text-decoration: none;
-    user-select: none;
+  font-family: "Rockwell";
+  margin-right: auto;
+  font-size: 2em;
+  color: white !important;
+  text-decoration: none;
+  user-select: none;
+  background: none !important;
 }
 
 .text {
-    font-size: 1.3rem;
-    text-indent: 50px;
-    text-align: justify;
-    text-justify: inter-word;
+  font-size: 1.3rem;
+  text-indent: 50px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
-.text h2{
-    text-indent: 0;
-    text-align: center;
+.text h2 {
+  text-indent: 0;
+  text-align: center;
 }
 
-.text li{
-    text-indent: 0;
+.text li {
+  text-indent: 0;
 }
 </style>
