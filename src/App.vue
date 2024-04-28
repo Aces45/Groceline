@@ -1,3 +1,51 @@
+<template>
+  <div class="navbar">
+    <router-link to="/" class="navbar-logo">GroceLine</router-link>
+    <router-link v-for="link in navLinks" :to="link.route" :key="link.id" class="navbar-item">{{ link.name }}</router-link>
+  </div>
+  <router-view/>
+</template>
+
+<script>
+export default{
+  data(){
+    return{
+      navLinks:[
+        {id: 1, route:'/', name: 'Home'},
+        {id: 2, route:'shop', name: 'Shop'},
+        {id: 3, route:'cart', name: 'Cart'},
+        {id: 4, route:'about', name: 'About'},
+        {id: 5, route:'profile', name: 'Profile'},
+        {id: 6, route:'signup', name: 'Signup'},
+        {id: 7, route:'login', name: 'Login'},
+      ]
+    }
+  },
+  methods:{
+
+  }
+}
+</script>
+
+
+<style>
+#app {
+  text-align: center;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
+
 body {
     margin: 0;
     font-family: 'Comfortaa';
@@ -5,14 +53,14 @@ body {
 
 @font-face {
     font-family: "Rockwell";
-    src: url("../assets/fonts/Rockwell.woff2") format("woff2");
+    src: url("~@/assets/fonts/Rockwell.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Comfortaa";
-    src: url("../assets/fonts/Comfortaa-VariableFont_wght.woff2") format("woff2");
+    src: url("~@/assets/fonts/Comfortaa-VariableFont_wght.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
 }
@@ -115,3 +163,4 @@ body {
 .text li{
     text-indent: 0;
 }
+</style>
