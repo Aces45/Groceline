@@ -5,7 +5,7 @@
     <input type="email" v-model="email" required />
 
     <label>Password</label>
-    <input type="password" v-model="password" required/>
+    <input type="password" v-model="password" required />
     <p v-if="passwordError" class="error">{{ passwordError }}</p>
     <!-- <a href="/login">Forgot password</a><br/> -->
     <br />
@@ -24,17 +24,20 @@ export default {
       passwordError: '',
     }
   },
-  methods:{
-    handleSubmit(){
+  methods: {
+    handleSubmit() {
       this.passwordError = this.password.length > 8 ? '' : 'Password must be at least 8 chars long.'
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
+a {
+  text-decoration: none;
+}
 form {
-  border: solid 1px gray;
+  border: solid 1px #93c47dff;
   max-width: 300px;
   min-height: 400px;
   margin: 30px auto;
@@ -45,7 +48,7 @@ form {
   border-radius: 20px;
 }
 label {
-  color: #aaa;
+  color: #595959;
   display: inline-block;
   margin: 25px 0 15px;
   font-size: 0.9em;
@@ -91,8 +94,12 @@ button {
   color: white;
   border-radius: 10px;
   cursor: pointer;
+  transition: .2s all ease-in-out
 }
-
+button:hover {
+  color: rgb(179, 179, 179);
+  background-color: rgb(78, 143, 48);
+}
 .submit {
   text-align: center;
 }
