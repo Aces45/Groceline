@@ -38,13 +38,9 @@ h1 {
   color: rgb(82, 82, 82);
 }
 
-html {
-  height: 100%;
-}
-
 body {
   margin: 0;
-  height: 100%;
+  min-height: 100vh;
   font-family: "Comfortaa";
   background-size: contain;
   background-repeat: no-repeat;
@@ -52,7 +48,6 @@ body {
 }
 
 .container {
-  justify-content: center;
   margin: 0 5rem;
   padding-top: 50px;
   height: 100%;
@@ -79,9 +74,20 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
-  body{
-
-    /*code if the screen is smaller than 1000px*/
+  /*style if the screen is smaller than 1000px*/
+  .container{
+    margin: 0;
+  }
+  .item-box{
+    width: 75% !important;
+    margin: auto;
+  }
+  p {
+    padding: 0;
+  }
+  .text-group {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -113,6 +119,10 @@ body {
 .item-box {
   height: auto;
   width: 25%;
+}
+
+.text-group{
+  text-align: center;
 }
 
 .navbar {
