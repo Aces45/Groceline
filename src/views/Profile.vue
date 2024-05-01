@@ -23,7 +23,7 @@ export default {
 .left, .right{
   border-radius: 10px;
   font-size: 1.5rem;
-  background-color: pink;
+  background-color: rgb(255, 255, 202);
   min-height: 300px;
   padding: 30px;
   text-align: justify;
