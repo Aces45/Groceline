@@ -60,6 +60,6 @@ hr {
   transition: all 0.1s ease-in;
 }
 .itemCard:hover {
-  scale: 1.15;
+  scale: 1.1;
 }
 </style>
