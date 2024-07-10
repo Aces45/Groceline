@@ -14,12 +14,7 @@
     <input type="password" v-model="password" @keyup="checkPassword" required />
 
     <label>Confirm password</label>
-    <input
-      type="password"
-      v-model="confirmPassword"
-      @keyup="checkPassword"
-      required
-    />
+    <input type="password" v-model="confirmPassword" @keyup="checkPassword" required/>
     <p v-if="passwordError" class="error">{{ passwordError }}</p>
 
     <button>Signup</button>
