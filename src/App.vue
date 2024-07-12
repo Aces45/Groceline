@@ -131,7 +131,7 @@ body {
   align-items: center;
   gap: 0.5%;
 
-  padding: 0 1%;
+  padding: 0 15rem;
   background-color: #93c47d;
 }
 
