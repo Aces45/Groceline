@@ -100,11 +100,12 @@ body {
 }
 
 .close-btn {
-  width: 10%;
-  margin: 0 90%;
-  background-color: red;
+  width: 8%;
+  margin: 0 92%;
+  background-color: #ff4032;
   border: none;
   font-size: large;
+  color:white;
 }
 
 #nav a.router-link-exact-active {
@@ -225,7 +226,7 @@ body {
   width: 1.5rem;
   margin: 0.15rem;
   border-radius: 1.5rem;
-  background-color: red;
+  background-color: #ff2d1e;
   cursor: default;
   color: white;
   font-weight: bold;
