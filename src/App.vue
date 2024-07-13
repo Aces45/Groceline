@@ -12,9 +12,9 @@
 
   <div class="container" @click.self="hideCart()">
     <Transition>
-      <Cart v-if="displayCart" @closeCart="hideCart()" :cart="cart"/>
+      <Cart v-if="displayCart" @closeCart="hideCart()" :cart="cart" />
     </Transition>
-    <router-view  @addItem="addItem"/>
+    <router-view @addItem="addItem" />
   </div>
 </template>
 
@@ -43,7 +43,7 @@ export default {
       const cart = document.getElementById('cart');
       cart.classList.remove('router-link-exact-active')
     },
-    addItem(item){
+    addItem(item) {
       this.cart.push(item)
       alert(item.name + ' added to cart!');
     }
@@ -75,17 +75,17 @@ body {
   /* width: 50%; */
   display: flex;
   margin: 0 auto;
-  opacity: 0.8;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   background-color: peachpuff;
+  font-size: 1.5rem;
 
+  padding: 1rem;
   position: fixed;
   top: 25%;
   left: 25%;
   width: 50vw;
-  height: 50vh;
   backdrop-filter: blur(15px);
 }
 
@@ -99,9 +99,13 @@ body {
   opacity: 0;
 }
 
-/* .content{
-  justify-content: space-around;
-} */
+.close-btn {
+  width: 10%;
+  margin: 0 90%;
+  background-color: red;
+  border: none;
+  font-size: large;
+}
 
 #nav a.router-link-exact-active {
   /* color: #42b983; */
