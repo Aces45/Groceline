@@ -2,39 +2,36 @@
   <div class="navbar" id="nav">
     <router-link to="/" class="navbar-logo">GroceLine</router-link>
     <router-link route="shop" to="shop" class="navbar-item">Shop</router-link>
-    <router-link route="cart" to="cart" class="navbar-item">Cart</router-link>
+    <a class="navbar-item" @mouseover="showCart()" @mouseleave="hideCart()">Cart <span class="red-ping">{{this.cart.length}}</span></a>
     <router-link route="about" to="about" class="navbar-item">About</router-link>
     <router-link route="profile" to="profile" class="navbar-item">Profile</router-link>
     <router-link route="signup" to="signup" class="navbar-item">Signup</router-link>
     <router-link route="login" to="login" class="navbar-item">Login</router-link>
+    </div>
 
-    <!-- deprecated -->
-    <!-- <router-link v-for="link in navLinks" :to="link.route" :key="link.id" class="navbar-item" >{{ link.name }}</router-link > -->
-  </div>
-  <div class="container">
-    <router-view />
-  </div>
+    <div class="container">
+      <Cart v-if="displayCart"/>
+      <router-view />
+    </div>
 </template>
 
 <script>
+import Cart from './components/Cart.vue';
+
 export default {
+  components: { Cart },
   data() {
     return {
-      // deprecated
-      // navLinks: [
-      //   { id: 1, route: '/', name: 'Home' },
-      //   { id: 2, route: 'shop', name: 'Shop' },
-      //   { id: 3, route: 'cart', name: 'Cart' },
-      //   { id: 4, route: 'about', name: 'About' },
-      //   { id: 5, route: 'profile', name: 'Profile' },
-      //   { id: 6, route: 'signup', name: 'Signup' },
-      //   { id: 7, route: 'login', name: 'Login' },
-      // ],
+      cart: ['item', 'item', 'item'],
+      displayCart: false
     }
   },
   methods: {
     showCart(){
-
+      this.displayCart = true;
+    },
+    hideCart(){
+      this.displayCart = false;
     }
   }
 }
@@ -57,6 +54,12 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-image: linear-gradient(white, #93c47dff);
+}
+
+.cart{
+  position: fixed;
+
+  background-color: "red";
 }
 
 .container {
@@ -177,6 +180,15 @@ body {
   font-family: "Rockwell";
   color: white !important;
   background: none !important;
+}
+
+.red-ping{
+  width: 1.5rem;
+  margin: 0.15rem;
+  border-radius: 1.5rem;
+  background-color: red;
+  color:white;
+  font-weight: bold;
 }
 
 .text {
