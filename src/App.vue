@@ -2,7 +2,7 @@
   <div class="navbar" id="nav">
     <router-link to="/" class="navbar-logo">GroceLine</router-link>
     <router-link route="shop" to="shop" class="navbar-item">Shop</router-link>
-    <a class="navbar-item" @mouseover="showCart()" @mouseleave="hideCart()">Cart <span class="red-ping">{{this.cart.length}}</span></a>
+    <a class="navbar-item" @mouseover="displayCart = true" @mouseleave="displayCart = false">Cart <span class="red-ping">{{this.cart.length}}</span></a>
     <router-link route="about" to="about" class="navbar-item">About</router-link>
     <router-link route="profile" to="profile" class="navbar-item">Profile</router-link>
     <router-link route="signup" to="signup" class="navbar-item">Signup</router-link>
@@ -10,7 +10,9 @@
     </div>
 
     <div class="container">
-      <Cart v-if="displayCart"/>
+      <Transition>
+        <Cart v-if="displayCart"/>
+      </Transition>
       <router-view />
     </div>
 </template>
@@ -27,12 +29,6 @@ export default {
     }
   },
   methods: {
-    showCart(){
-      this.displayCart = true;
-    },
-    hideCart(){
-      this.displayCart = false;
-    }
   }
 }
 </script>
@@ -56,10 +52,27 @@ body {
   background-image: linear-gradient(white, #93c47dff);
 }
 
+/* .cart{
+  position: fixed;
+  z-index: 99999;
+  width: 50%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
+  background-color:red;
+  animation: .2s ease-in-out;
+} */
 .cart{
   position: fixed;
-
-  background-color: "red";
+  z-index: 99999;
+  width: 50%;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-content: center;
+  background-color:red;
+  animation: .2s ease-in-out;
 }
 
 .container {
