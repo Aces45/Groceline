@@ -1,17 +1,18 @@
 <template>
   <div class="navbar" id="nav">
     <router-link to="/" class="navbar-logo">GroceLine</router-link>
-    <router-link route="shop" to="shop" class="navbar-item">Shop</router-link>
-    <a class="navbar-item" @mouseover="displayCart = true" @mouseleave="displayCart = false">Cart <span class="red-ping">{{this.cart.length}}</span></a>
-    <router-link route="about" to="about" class="navbar-item">About</router-link>
-    <router-link route="profile" to="profile" class="navbar-item">Profile</router-link>
-    <router-link route="signup" to="signup" class="navbar-item">Signup</router-link>
-    <router-link route="login" to="login" class="navbar-item">Login</router-link>
+    <router-link to="/" class="navbar-item">Home</router-link>
+    <router-link to="shop" class="navbar-item">Shop</router-link>
+    <router-link to="about" class="navbar-item">About</router-link>
+    <router-link to="profile" class="navbar-item">Profile</router-link>
+    <router-link to="signup" class="navbar-item">Signup</router-link>
+    <router-link to="login" class="navbar-item">Login</router-link>
+    <a id="cart" class="navbar-item" @click="toggleCart()"> <i class="fa-solid fa-cart-shopping"></i> <span class="red-ping">{{this.cart.length}}</span></a>
     </div>
 
     <div class="container">
       <Transition>
-        <Cart v-if="displayCart"/>
+        <Cart v-if="displayCart" @holdCart="showCart"/>
       </Transition>
       <router-view />
     </div>
@@ -29,6 +30,12 @@ export default {
     }
   },
   methods: {
+    toggleCart(){
+      this.displayCart = !this.displayCart;
+      const cart = document.getElementById('cart');
+      if(cart.classList.contains('router-link-exact-active')) cart.classList.remove('router-link-exact-active');
+      else cart.classList.add('router-link-exact-active');
+    }
   }
 }
 </script>
@@ -63,16 +70,26 @@ body {
   background-color:red;
   animation: .2s ease-in-out;
 } */
+
 .cart{
   position: fixed;
-  z-index: 99999;
+  z-index: 999;
   width: 50%;
   display: flex;
-  margin: auto;
+  margin: 0 auto;
   justify-content: center;
   align-content: center;
-  background-color:red;
-  animation: .2s ease-in-out;
+  background-color:pink;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 
 .container {
@@ -200,6 +217,7 @@ body {
   margin: 0.15rem;
   border-radius: 1.5rem;
   background-color: red;
+  cursor: default;
   color:white;
   font-weight: bold;
 }
