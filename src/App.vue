@@ -7,15 +7,15 @@
     <router-link to="profile" class="navbar-item">Profile</router-link>
     <router-link to="signup" class="navbar-item">Signup</router-link>
     <router-link to="login" class="navbar-item">Login</router-link>
-    <a id="cart" class="navbar-item" @click="toggleCart()"> <i class="fa-solid fa-cart-shopping"></i> <span class="red-ping">{{this.cart.length}}</span></a>
-    </div>
+    <a id="cart" class="navbar-item" @click="toggleCart()"><i class="fa-solid fa-cart-shopping"></i><span class="red-ping">{{ this.cart.length }}</span></a>
+  </div>
 
-    <div class="container">
-      <Transition>
-        <Cart v-if="displayCart" @holdCart="showCart"/>
-      </Transition>
-      <router-view />
-    </div>
+  <div class="container" @click.self="hideCart()">
+    <Transition>
+      <Cart v-if="displayCart" @closeCart="hideCart()" :cart="cart"/>
+    </Transition>
+    <router-view  @addItem="addItem"/>
+  </div>
 </template>
 
 <script>
@@ -25,21 +25,31 @@ export default {
   components: { Cart },
   data() {
     return {
-      cart: ['item', 'item', 'item'],
+      cart: [],
       displayCart: false
     }
   },
   methods: {
-    toggleCart(){
-      this.displayCart = !this.displayCart;
+    toggleCart() {
+      (this.displayCart) ? this.hideCart() : this.showCart();
+    },
+    showCart() {
+      this.displayCart = true;
       const cart = document.getElementById('cart');
-      if(cart.classList.contains('router-link-exact-active')) cart.classList.remove('router-link-exact-active');
-      else cart.classList.add('router-link-exact-active');
+      cart.classList.add('router-link-exact-active');
+    },
+    hideCart() {
+      this.displayCart = false;
+      const cart = document.getElementById('cart');
+      cart.classList.remove('router-link-exact-active')
+    },
+    addItem(item){
+      this.cart.push(item)
+      alert(item.name + ' added to cart!');
     }
   }
 }
 </script>
-
 
 <style>
 #app {
@@ -59,27 +69,24 @@ body {
   background-image: linear-gradient(white, #93c47dff);
 }
 
-/* .cart{
-  position: fixed;
-  z-index: 99999;
-  width: 50%;
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-  align-content: center;
-  background-color:red;
-  animation: .2s ease-in-out;
-} */
-
-.cart{
-  position: fixed;
+.cart {
+  /* position: fixed; */
   z-index: 999;
-  width: 50%;
+  /* width: 50%; */
   display: flex;
   margin: 0 auto;
-  justify-content: center;
+  opacity: 0.8;
+  flex-direction: column;
   align-content: center;
-  background-color:pink;
+  justify-content: center;
+  background-color: peachpuff;
+
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  width: 50vw;
+  height: 50vh;
+  backdrop-filter: blur(15px);
 }
 
 .v-enter-active,
@@ -92,11 +99,9 @@ body {
   opacity: 0;
 }
 
-.container {
-  margin: 0 5rem;
-  padding-top: 50px;
-  height: 100%;
-}
+/* .content{
+  justify-content: space-around;
+} */
 
 #nav a.router-link-exact-active {
   /* color: #42b983; */
@@ -120,10 +125,10 @@ body {
 
 @media screen and (max-width: 1000px) {
   /*style if the screen is smaller than 1000px*/
-  .container{
+  .container {
     margin: 0;
   }
-  .item-box{
+  .item-box {
     width: 75% !important;
     margin: auto;
   }
@@ -166,7 +171,7 @@ body {
   width: 25%;
 }
 
-.text-group{
+.text-group {
   text-align: center;
 }
 
@@ -212,13 +217,13 @@ body {
   background: none !important;
 }
 
-.red-ping{
+.red-ping {
   width: 1.5rem;
   margin: 0.15rem;
   border-radius: 1.5rem;
   background-color: red;
   cursor: default;
-  color:white;
+  color: white;
   font-weight: bold;
 }
 
