@@ -15,7 +15,7 @@
             <tr v-for="item in this.cart" :key="item.id">
                 <td><img :src="item.img" height="100px" width="100px"/></td>
                 <td>{{ item.name }}</td>
-                <td><input type="number" title="Quantity" :placeholder="item.quantity" min=0
+                <td><input type="number" title="Quantity" :value="item.quantity" min=0
                   style="font-size: 1.1rem; max-width: 20%; text-align: center; border-radius: 5px; border: 2px solid #93C47D"></td>
                 <td><button class="close-btn" @click="removeItem(item.id)" style="margin: 0; height: 40px; width: 40px; cursor: pointer;"><i class="fa-solid fa-trash"></i></button></td>
             </tr>
@@ -28,7 +28,9 @@
 
 export default ({
   props: ['cart'],
-  setup() {
+  data()  {
+    return{
+    }
   },
   methods: {
     closeCart(){
@@ -38,7 +40,7 @@ export default ({
         confirm("Are you sure?");
         this.$emit('removeItem', id);
     }
-  }
+  },
 })
 </script>
 
