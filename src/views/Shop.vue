@@ -26,22 +26,26 @@ export default {
   data() {
     return {
       items: [
-        { id: 1, name: 'Creampuff', price: 50, category: 'food', img: '' },
-        { id: 2, name: 'Creampuff', price: 50, category: 'food', img: '' },
-        { id: 3, name: 'Creampuff', price: 50, category: 'food', img: '' },
-        { id: 4, name: 'Creampuff', price: 50, category: 'food', img: '' },
-        { id: 5, name: 'Creampuff', price: 50, category: 'food', img: '' },
-        { id: 6, name: 'Creampuff', price: 50, category: 'food', img: '' },
-        { id: 7, name: 'Creampuff', price: 50, category: 'food', img: '' },
-        { id: 8, name: 'Creampuff', price: 50, category: 'food', img: '' },
+        { id: 1, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
+        { id: 2, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
+        { id: 3, name: 'Creampuff', price: 50, category: 'food', img: creamPuff3 },
+        { id: 4, name: 'Creampuff', price: 50, category: 'food', img: creamPuff4 },
+        { id: 5, name: 'Creampuff', price: 50, category: 'food', img: creamPuff5 },
+        { id: 6, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
+        { id: 7, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
+        { id: 8, name: 'Creampuff', price: 50, category: 'food', img: creamPuff3 },
+        { id: 9, name: 'Creampuff', price: 50, category: 'food', img: creamPuff4 },
+        { id: 10, name: 'Creampuff', price: 50, category: 'food', img: creamPuff5 },
+        { id: 11, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
+        { id: 12, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
+        { id: 13, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
       ],
-      creamPuffs: [
-        '../assets/images/creampuff1.png',
-        '../assets/images/creampuff2.png',
-        '../assets/images/creampuff3.png',
-        '../assets/images/creampuff4.png',
-        '../assets/images/creampuff5.png',
-      ]
+    }
+  },
+  methods: {
+    addToCart(item) {
+      item.quantity = 1;
+      this.$emit('addItem', item);
     }
   },
 }
