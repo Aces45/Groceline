@@ -7,7 +7,7 @@
     <router-link to="profile" class="navbar-item">Profile</router-link>
     <router-link to="signup" class="navbar-item">Signup</router-link>
     <router-link to="login" class="navbar-item">Login</router-link>
-    <a id="cart" class="navbar-item" @click="toggleCart()"><i class="fa-solid fa-cart-shopping"></i><span class="red-ping">{{ this.cart.length }}</span></a>
+    <a id="cart" class="navbar-item" @click="toggleCart()"><i class="fa-solid fa-cart-shopping"></i><span v-if="cart.length" class="red-ping">{{ this.cart.length }}</span></a>
   </div>
 
   <div class="container" @click.self="hideCart()">
