@@ -41,10 +41,11 @@ export default {
     hideCart() {
       this.displayCart = false;
       const cart = document.getElementById('cart');
-      cart.classList.remove('router-link-exact-active')
+      cart.classList.remove('router-link-exact-active');
     },
     addItem(item) {
-      this.cart.push(item)
+      item.quantity = 1
+      this.cart.push(item);
       alert(item.name + ' added to cart!');
     },
     removeItem(id){
@@ -83,9 +84,10 @@ body {
   background-color: peachpuff;
   font-size: 1.5rem;
 
+  overflow-y: auto;
   padding: 1rem;
   position: fixed;
-  top: 25%;
+  top: 10%;
   left: 25%;
   width: 50vw;
   backdrop-filter: blur(15px);
@@ -141,13 +143,21 @@ body {
   .container {
     margin: 0;
   }
+
   .item-box {
     width: 75% !important;
     margin: auto;
   }
+
+  .navbar, .navbar-item{
+    padding: 0 1rem !important;
+    font-size: 1rem !important;
+  }
+
   p {
     padding: 0;
   }
+
   .text-group {
     display: flex;
     flex-direction: column;
