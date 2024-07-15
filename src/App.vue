@@ -104,6 +104,7 @@ body {
 }
 
 .close-btn {
+  border-radius: 10px;
   width: 8%;
   margin: 0 92%;
   background-color: #ff4032;
