@@ -14,7 +14,7 @@
     <Transition>
       <Cart v-if="displayCart" @closeCart="hideCart()" :cart="cart" />
     </Transition>
-    <router-view @addItem="addItem" />
+    <router-view @addItem="addItem"/>
   </div>
 </template>
 
