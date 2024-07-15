@@ -12,7 +12,7 @@
 
   <div class="container" @click.self="hideCart()">
     <Transition>
-      <Cart v-if="displayCart" @closeCart="hideCart()" :cart="cart" />
+      <Cart v-if="displayCart" @closeCart="hideCart()" :cart="cart" @removeItem="removeItem"/>
     </Transition>
     <router-view @addItem="addItem"/>
   </div>
@@ -46,6 +46,9 @@ export default {
     addItem(item) {
       this.cart.push(item)
       alert(item.name + ' added to cart!');
+    },
+    removeItem(id){
+      this.cart.pop();
     }
   }
 }
@@ -70,9 +73,8 @@ body {
 }
 
 .cart {
-  /* position: fixed; */
   z-index: 999;
-  /* width: 50%; */
+  border-radius: 10px;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
@@ -104,6 +106,7 @@ body {
 }
 
 .close-btn {
+  cursor: pointer;
   border-radius: 10px;
   width: 8%;
   margin: 0 92%;
