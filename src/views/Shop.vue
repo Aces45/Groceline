@@ -47,7 +47,7 @@ export default {
       item.quantity = 1;
       this.$emit('addItem', item);
     }
-  },
+  }
 }
 </script>
 
