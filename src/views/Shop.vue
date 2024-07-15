@@ -15,8 +15,8 @@ import creamPuff5 from '../assets/images/creampuff5.png';
     <div v-for="item in items" class="itemCard" :key="item.id">
       <h1>{{ item.name }}</h1>
       <h3>{{ item.category }}</h3>
-      <!-- <img :src="creamPuffs[Math.floor(Math.random() * creamPuffs.length)]"/> -->
-      <img :src="creamPuffs[Math.floor(Math.random() * creamPuffs.length)]" width="180px" height="180px"/>
+      <img :src="item.img" width="180px" height="180px" />
+      <button @click="addToCart(item)">Add to Cart</button>
     </div>
   </div>
 </template>
