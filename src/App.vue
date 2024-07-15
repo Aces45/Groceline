@@ -99,6 +99,10 @@ body {
   opacity: 0;
 }
 
+.content{
+  padding: 0 10%;
+}
+
 .close-btn {
   width: 8%;
   margin: 0 92%;
