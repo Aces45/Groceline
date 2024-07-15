@@ -4,17 +4,20 @@
     <h2 v-if="cart.length == 0">Your cart is empty.</h2>
     <h2 v-else-if="cart.length == 1">You have 1 item in your cart.</h2>
     <h2 v-else>You have {{ cart.length }} items in your cart.</h2>
-    <table>
+    <table v-if="cart.length > 0">
         <tr>
-            <td>ID</td>
+            <td>Image</td>
             <td>Item</td>
             <td>Quantity</td>
+            <td></td>
         </tr>
         <tbody>
             <tr v-for="item in this.cart" :key="item.id">
-                <td>{{ item.id }}</td>
+                <td><img :src="item.img" height="100px" width="100px"/></td>
                 <td>{{ item.name }}</td>
-                <td>{{ item.quantity }}</td>
+                <td><input type="number" title="Quantity" :placeholder="item.quantity" min=0
+                  style="font-size: 1.1rem; max-width: 20%; text-align: center; border-radius: 5px; border: 2px solid #93C47D"></td>
+                <td><button class="close-btn" @click="removeItem(item.id)" style="margin: 0; height: 40px; width: 40px; cursor: pointer;"><i class="fa-solid fa-trash"></i></button></td>
             </tr>
         </tbody>
     </table>
@@ -30,6 +33,10 @@ export default ({
   methods: {
     closeCart(){
         this.$emit('closeCart')
+    },
+    removeItem(id){
+        confirm("Are you sure?");
+        this.$emit('removeItem', id);
     }
   }
 })
@@ -37,6 +44,10 @@ export default ({
 
 <style>
 table, td, tr {
-    border: 1px solid black;
+    border: 1px solid #93C47D;
+}
+
+td, table {
+    background-color: white;
 }
 </style>
