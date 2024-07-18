@@ -1,9 +1,13 @@
 <template>
   <div class="cart">
-    <button class="close-btn" @click="closeCart()"><i class="fa-solid fa-xmark"></i></button>
-    <h2 v-if="cart.length == 0">Your cart is empty.</h2>
-    <h2 v-else-if="cart.length == 1">You have 1 item in your cart.</h2>
-    <h2 v-else>You have {{ cart.length }} items in your cart.</h2>
+    <div style="position:sticky; top: 0; background-color: peachpuff; opacity: 0.8;
+    display: flex; align-items: center; justify-content: center;">
+      <h2 v-if="cart.length == 0">Your cart is empty.</h2>
+      <h2 v-else-if="cart.length == 1">You have 1 item in your cart.</h2>
+      <h2 v-else>You have {{ cart.length }} items in your cart.</h2>
+      <button>Checkout</button>
+      <button class="close-btn" @click="closeCart()" style="justify-self: right"><i class="fa-solid fa-xmark"></i></button>
+    </div>
     <table v-if="cart.length > 0">
         <tr>
             <td>Image</td>
@@ -21,8 +25,8 @@
             </tr>
         </tbody>
     </table>
-  </div>
-</template>
+    </div>
+  </template>
 
 <script>
 
@@ -37,8 +41,7 @@ export default ({
         this.$emit('closeCart')
     },
     removeItem(id){
-        confirm("Are you sure?");
-        this.$emit('removeItem', id);
+        if(confirm("Are you sure?")) this.$emit('removeItem', id);
     }
   },
 })
@@ -46,7 +49,7 @@ export default ({
 
 <style>
 table, td, tr {
-    border: 1px solid #93C47D;
+  border: 1px solid #93C47D;
 }
 
 td, table {
