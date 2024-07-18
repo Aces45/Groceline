@@ -75,22 +75,20 @@ body {
 
 .cart {
   z-index: 999;
-  border-radius: 10px;
-  display: flex;
-  margin: 0 auto;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
+  border-radius: 20px;
   background-color: peachpuff;
   font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
 
-  overflow-y: auto;
-  padding: 1rem;
+  padding: 0 1rem;
   position: fixed;
   top: 10%;
   left: 25%;
+
+  overflow: auto;
+  max-height: 80vh;
   width: 50vw;
-  backdrop-filter: blur(15px);
 }
 
 .v-enter-active,
@@ -111,7 +109,7 @@ body {
   cursor: pointer;
   border-radius: 10px;
   width: 8%;
-  margin: 0 92%;
+
   background-color: #ff4032;
   border: none;
   font-size: large;
