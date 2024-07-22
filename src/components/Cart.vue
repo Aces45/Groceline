@@ -9,14 +9,16 @@
       <button class="close-btn" @click="closeCart()" style="justify-self: right"><i class="fa-solid fa-xmark"></i></button>
     </div>
       <table v-if="cart.length > 0">
-          <tr>
-              <td>Image</td>
-              <td>Item</td>
-              <td>Quantity</td>
-              <td>Price</td>
-              <td>Total</td>
-              <td></td>
-          </tr>
+          <thead>
+            <tr>
+                <td>Image</td>
+                <td>Item</td>
+                <td>Quantity</td>
+                <td>Price</td>
+                <td>Total</td>
+                <td></td>
+            </tr>
+          </thead>
           <tbody>
               <tr v-for="item in this.cart" :key="item.id">
                   <td><img :src="item.img" height="100px" width="100px"/></td>
@@ -29,7 +31,7 @@
               </tr>
           </tbody>
       </table>
-      </div>
+    </div>
   </template>
 
 <script>
