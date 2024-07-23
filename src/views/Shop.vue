@@ -48,12 +48,16 @@ export default {
         { id: 12, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
         { id: 13, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
       ],
+      categories: ['Beverage', 'Dessert', 'Food', 'Frozen']
     }
   },
   methods: {
     addToCart(item) {
       item.quantity = 1;
       this.$emit('addItem', item);
+    },
+    filterItems(category){
+
     }
   }
 }
@@ -63,6 +67,21 @@ export default {
 hr {
   border: 1px solid rgb(177, 177, 177);
 }
+
+.category{
+  width: 70%;
+  height: 40px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 20px auto;
+  background-color: white;
+  transition: all 0.1s ease-in;
+}
+
+.category:hover {
+  scale: 1.1;
+}
+
 .content {
   display: flex;
   flex-wrap: wrap;
