@@ -19,7 +19,7 @@
             </tr>
           </thead>
           <tbody>
-              <tr v-for="item in this.cart" :key="item.id">
+              <tr v-for="item in cart" :key="item.id">
                   <td><img :src="item.img" height="100px" width="100px"/></td>
                   <td>{{ item.name }}</td>
                   <td>
@@ -41,8 +41,9 @@
 
 export default ({
   props: ['cart'],
-  data()  {
+  data() {
     return{
+      cart: this.cart
     }
   },
   methods: {
