@@ -65,6 +65,14 @@ export default {
     addToCart(item) {
       item.quantity = 1;
       this.$emit('addItem', item);
+      this.message = item.name + " added to cart!";
+      this.image = item.img;
+      this.showMessage = true;
+      console.log('Message displayed')
+      setTimeout(() => {
+        this.showMessage = false;
+        console.log('Message hidden')
+      }, 2000);
     },
     filterItems(category){
 
