@@ -32,6 +32,11 @@
                   <td>₱{{ item.quantity * item.price }}</td>
                   <td><button class="close-btn" @click="removeItem(item.id)" style="margin: 0; height: 40px; width: 40px; cursor: pointer;"><i class="fa-solid fa-trash"></i></button></td>
               </tr>
+              <tr style="position: sticky; bottom: 0">
+                <td colspan="4"></td>
+                <td>₱1800</td>
+                <td></td>
+              </tr>
           </tbody>
       </table>
       <div style="position:sticky; bottom: 0; background-color: peachpuff; opacity: 0.8;
@@ -47,7 +52,6 @@ export default ({
   props: ['cart'],
   data() {
     return{
-      cart: this.cart
     }
   },
   methods: {
@@ -55,7 +59,9 @@ export default ({
         this.$emit('closeCart')
     },
     removeItem(id){
-        if(confirm("Are you sure?")) this.$emit('removeItem', id);
+      if(confirm("Are you sure?")){
+          this.$emit('removeItem', id)
+      }
     }
   },
 })
