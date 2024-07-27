@@ -73,6 +73,6 @@ table, td, tr {
 }
 
 td, table {
-    background-color: white;
+    background-color: rgb(255, 255, 202);
 }
 </style>
