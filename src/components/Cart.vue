@@ -56,7 +56,8 @@ export default ({
   },
   methods: {
     closeCart(){
-        this.$emit('closeCart')
+      // in App.vue, triggers the Cart component to run the hideCart() method
+      this.$emit('closeCart')
     },
     removeItem(id){
       this.$emit('removeItem', id)
