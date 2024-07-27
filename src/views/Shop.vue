@@ -55,6 +55,9 @@ export default {
         { id: 12, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
         { id: 13, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
       ],
+      showMessage: false,
+      message: "Test",
+      image: "",
       categories: ['Beverage', 'Dessert', 'Food', 'Frozen']
     }
   },
