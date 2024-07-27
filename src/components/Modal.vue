@@ -1,6 +1,6 @@
 <template>
   <div class="modal">
-    <img :src="image" height="200px" width="200px">
+    <img :src="image" height="100px" width="100px">
     <h2>{{ message }}</h2>
   </div>
 </template>
