@@ -34,6 +34,10 @@
               </tr>
           </tbody>
       </table>
+      <div style="position:sticky; bottom: 0; background-color: peachpuff; opacity: 0.8;
+      display: flex; align-items: center; justify-content: center;">
+        <button style="margin: 25px">Checkout</button>
+      </div>
     </div>
   </template>
 
