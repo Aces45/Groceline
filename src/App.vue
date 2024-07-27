@@ -46,13 +46,11 @@ export default {
     addItem(item) {
       item.quantity = 1
       this.cart.push(item);
-      alert(item.name + ' added to cart!');
     },
     removeItem(id){
     this.cart = this.cart.filter(item => {
-          return item.id != id
-        }
-      )
+        return item.id != id
+      })
     }
   }
 }
