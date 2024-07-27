@@ -18,8 +18,10 @@ export default ({
     height: auto;
     width: 500px;
     position: fixed;
+    margin-top: 1rem;
     border-radius: 10px;
-    background-color: pink;
+    background-color: rgb(255, 255, 202);
+    border: 5px solid #93C47D;
 }
 
 </style>
