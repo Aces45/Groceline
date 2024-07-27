@@ -2,12 +2,12 @@
   <div class="cart">
     <div style="position:sticky; top: 0; background-color: peachpuff; opacity: 0.8;
     display: flex; align-items: center; justify-content: center;">
-      <h2 v-if="cart.length == 0">Your cart is empty.</h2>
-      <h2 v-else-if="cart.length == 1">You have 1 item in your cart.</h2>
-      <h2 v-else>You have {{ cart.length }} items in your cart.</h2>
+      <h2 v-if="this.cart.length == 0">Your cart is empty.</h2>
+      <h2 v-else-if="this.cart.length == 1">You have 1 item in your cart.</h2>
+      <h2 v-else>You have {{ this.cart.length }} items in your cart.</h2>
       <button class="close-btn" @click="closeCart()" style="align-self: right"><i class="fa-solid fa-xmark"></i></button>
     </div>
-      <table v-if="cart.length > 0">
+      <table v-if="this.cart.length > 0">
           <thead>
             <tr>
                 <td>Image</td>
@@ -19,7 +19,7 @@
             </tr>
           </thead>
           <tbody>
-              <tr v-for="item in cart" :key="item.id">
+              <tr v-for="item in this.cart" :key="item.id">
                   <td><img :src="item.img" height="100px" width="100px"/></td>
                   <td>{{ item.name }}</td>
                   <td>
