@@ -49,7 +49,10 @@ export default {
       alert(item.name + ' added to cart!');
     },
     removeItem(id){
-      this.cart.pop();
+    this.cart = this.cart.filter(item => {
+          return item.id != id
+        }
+      )
     }
   }
 }
