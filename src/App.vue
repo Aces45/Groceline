@@ -94,6 +94,14 @@ body {
   width: 50vw;
 }
 
+.cart-btn{
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px;
+  width: 2rem;
+  height: 2rem;
+}
+
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.3s ease;
