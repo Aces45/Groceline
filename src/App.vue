@@ -111,7 +111,7 @@ body {
 }
 
 .content{
-  padding: 0 10%;
+  padding: 0 2%;
 }
 
 .close-btn {
