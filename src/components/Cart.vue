@@ -59,9 +59,7 @@ export default ({
         this.$emit('closeCart')
     },
     removeItem(id){
-      if(confirm("Are you sure?")){
-          this.$emit('removeItem', id)
-      }
+      this.$emit('removeItem', id)
     }
   },
 })
