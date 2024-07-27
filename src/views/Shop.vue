@@ -9,6 +9,11 @@ import creamPuff5 from '../assets/images/creampuff5.png';
 </script>
 
 <template>
+  <div style="display: flex; justify-content: center;">
+    <transition>
+      <Modal v-if="showMessage" :message = "message" :image = "image"/>
+    </transition>
+  </div>
   <h1>Shop</h1>
   <hr />
   <div style="display: flex; flex-direction: row; padding: 1% 10%">
