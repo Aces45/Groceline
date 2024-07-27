@@ -1,10 +1,10 @@
 <script setup>
 // import images
-import creamPuff1 from '../assets/images/creampuff1.png';
-import creamPuff2 from '../assets/images/creampuff2.png';
-import creamPuff3 from '../assets/images/creampuff3.png';
-import creamPuff4 from '../assets/images/creampuff4.png';
-import creamPuff5 from '../assets/images/creampuff5.png';
+// import creamPuff1 from '../assets/images/creampuff1.png';
+// import creamPuff2 from '../assets/images/creampuff2.png';
+// import creamPuff3 from '../assets/images/creampuff3.png';
+// import creamPuff4 from '../assets/images/creampuff4.png';
+// import creamPuff5 from '../assets/images/creampuff5.png';
 
 </script>
 
@@ -41,19 +41,19 @@ export default {
   data() {
     return {
       items: [
-        { id: 1, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
-        { id: 2, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
-        { id: 3, name: 'Creampuff', price: 50, category: 'food', img: creamPuff3 },
-        { id: 4, name: 'Creampuff', price: 50, category: 'food', img: creamPuff4 },
-        { id: 5, name: 'Creampuff', price: 50, category: 'food', img: creamPuff5 },
-        { id: 6, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
-        { id: 7, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
-        { id: 8, name: 'Creampuff', price: 50, category: 'food', img: creamPuff3 },
-        { id: 9, name: 'Creampuff', price: 50, category: 'food', img: creamPuff4 },
-        { id: 10, name: 'Creampuff', price: 50, category: 'food', img: creamPuff5 },
-        { id: 11, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
-        { id: 12, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
-        { id: 13, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
+         { id: 1, name: 'Creampuff', price: 50, category: 'food', img: '../assets/images/creampuff5.png' },
+         { id: 2, name: 'Creampuff', price: 50, category: 'food', img: '../assets/images/creampuff5.png' },
+         { id: 3, name: 'Creampuff', price: 50, category: 'food', img: '../assets/images/creampuff5.png' },
+         { id: 4, name: 'Creampuff', price: 50, category: 'food', img: '../assets/images/creampuff5.png' },
+         { id: 5, name: 'Creampuff', price: 50, category: 'food', img: '../assets/images/creampuff5.png' },
+         { id: 6, name: 'Creampuff', price: 50, category: 'food', img: '../assets/images/creampuff5.png' },
+         { id: 7, name: 'Creampuff', price: 50, category: 'food', img: '../assets/images/creampuff5.png' },
+         { id: 8, name: 'Creampuff', price: 50, category: 'food', img: '../assets/images/creampuff5.png' },
+         { id: 9, name: 'Creampuff', price: 50, category: 'food', img: '../assets/images/creampuff5.png' },
+        { id: 10, name: 'Creampuff', price: 50, category: 'food', img: '../assets/images/creampuff5.png' },
+        { id: 11, name: 'Creampuff', price: 50, category: 'food', img: '../assets/images/creampuff5.png' },
+        { id: 12, name: 'Creampuff', price: 50, category: 'food', img: '../assets/images/creampuff5.png' },
+        { id: 13, name: 'Creampuff', price: 50, category: 'food', img: '../assets/images/creampuff5.png' },
       ],
       showMessage: false,
       message: "Test",
