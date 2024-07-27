@@ -35,7 +35,9 @@ import creamPuff5 from '../assets/images/creampuff5.png';
 </template>
 
 <script>
+import Modal from '@/components/Modal.vue';
 export default {
+  components: [Modal],
   data() {
     return {
       items: [
