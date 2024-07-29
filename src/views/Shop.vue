@@ -63,12 +63,18 @@ export default {
   },
   methods: {
     addToCart(item) {
+      // temporary quantity value
       item.quantity = 1;
+
+      // triggers addItem event to parent component
       this.$emit('addItem', item);
+
+      // sets message and displays it
       this.message = item.name + " added to cart!";
       this.image = item.img;
       this.showMessage = true;
-      console.log('Message displayed')
+
+      // sets 2s timer for message modal
       setTimeout(() => {
         this.showMessage = false;
         console.log('Message hidden')
