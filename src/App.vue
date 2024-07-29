@@ -12,6 +12,9 @@
 
   <div class="container" @click.self="hideCart()">
     <transition>
+      <router-view @addItem="addItem"/>
+    </transition>
+    <transition>
       <Cart v-if="displayCart" @closeCart="hideCart()" :cart="cart" @removeItem="removeItem"/>
     </transition>
     <router-view @addItem="addItem"/>
