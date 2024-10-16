@@ -1,11 +1,14 @@
 <template>
+  <Modal :message="Test"/>
   <div class="cart">
     <div style="position:sticky; top: 0; background-color: peachpuff; opacity: 0.8;
-    display: flex; align-items: center; justify-content: center;">
+    display: flex; justify-content: space-around;">
+      <p></p>
+      <p></p>
       <h2 v-if="this.cart.length == 0">Your cart is empty.</h2>
       <h2 v-else-if="this.cart.length == 1">You have 1 item in your cart.</h2>
       <h2 v-else>You have {{ this.cart.length }} items in your cart.</h2>
-      <button class="close-btn" @click="closeCart()" style="align-self: right"><i class="fa-solid fa-xmark"></i></button>
+      <button class="close-btn" @click="closeCart()" style="justify-self: end; margin: 35px"><i class="fa-solid fa-xmark"></i></button>
     </div>
       <table v-if="this.cart.length > 0">
           <thead>
@@ -52,6 +55,7 @@ export default ({
   props: ['cart'],
   data() {
     return{
+      Test: 'test'
     }
   },
   methods: {
@@ -60,7 +64,7 @@ export default ({
       this.$emit('closeCart')
     },
     removeItem(id){
-      // in App.vue, triggers the Cart component to run the
+      // in App.vue, triggers the Cart component to run the removeItem() method
       if(confirm('Are you sure you want to remove this item?')) {this.$emit('removeItem', id)}
     }
   },
