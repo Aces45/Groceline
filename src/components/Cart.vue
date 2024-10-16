@@ -26,8 +26,8 @@
                   <td><img :src="item.img" height="100px" width="100px"/></td>
                   <td>{{ item.name }}</td>
                   <td>
-                    <button class="cart-btn" @click="item.quantity--">-</button>
-                    <input type="number" v-model="item.quantity" title="Quantity" min="0"
+                    <button class="cart-btn" @click="(item.quantity > 1) ? item.quantity-- : removeItem(item.id)">-</button>
+                    <input type="number" v-model="item.quantity" title="Quantity" min="1"
                     style="font-size: 1.1rem; max-width: 20%; text-align: center; border-radius: 5px; border: 2px solid #93C47D">
                     <button class="cart-btn" @click="item.quantity++">+</button>
                   </td>
