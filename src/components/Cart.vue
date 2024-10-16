@@ -75,8 +75,10 @@ export default ({
 table, td, tr {
   border: 1px solid #93C47D;
 }
-
-td, table {
+td {
     background-color: rgb(255, 255, 202);
+}
+table{
+  background-color: #93C47D;
 }
 </style>
