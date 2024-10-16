@@ -67,7 +67,7 @@ export default {
         { id: 11, name: 'Lemonade', price: 60, category: 'beverage', img: lemonade },
         { id: 12, name: 'Buko Juice', price: 100, category: 'beverage', img: bukoJuice },
       ],
-      filteredDisplay: [],
+      filteredItems: [],
       isFiltered: false,
       showMessage: false,
       message: "Test",
@@ -95,7 +95,7 @@ export default {
       }, 2000);
     },
     filterItems(category){
-      this.filteredDisplay = this.items.filter(item => {
+      this.filteredItems = this.items.filter(item => {
         return item.category == category
       });
       this.isFiltered = true;
