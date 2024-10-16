@@ -69,7 +69,6 @@ img{
   width: 50%;
   margin: auto;
 }
-table,
 thead,
 td {
   background-color: rgb(255, 255, 202);
