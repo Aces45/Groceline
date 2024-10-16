@@ -32,6 +32,7 @@ import creamPuff5 from '@/assets/images/creampuff5.png';
         <h1>{{ item.name }}</h1>
         <h3>{{ item.category }}</h3>
         <img :src="item.img" width="180px" height="180px" />
+        <h1>₱{{ item.price }}</h1>
         <button @click="addToCart(item)">Add to Cart</button>
       </div>
     </div>
@@ -41,6 +42,7 @@ import creamPuff5 from '@/assets/images/creampuff5.png';
         <h1>{{ item.name }}</h1>
         <h3>{{ item.category }}</h3>
         <img :src="item.img" width="180px" height="180px" />
+        <h1>₱{{ item.price }}</h1>
         <button @click="addToCart(item)">Add to Cart</button>
       </div>
     </div>
