@@ -82,7 +82,7 @@ export default {
       showMessage: false,
       message: "Test",
       image: "",
-      categories: ['Beverage', 'Dessert', 'Food', 'Frozen']
+      categories: ['Beverage', 'Creampuff', 'Dessert', 'Food', 'Frozen']
     }
   },
   methods: {
