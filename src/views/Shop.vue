@@ -1,10 +1,10 @@
 <script setup>
 // import images
-import creamPuff1 from '../assets/images/creampuff1.png';
-import creamPuff2 from '../assets/images/creampuff2.png';
-import creamPuff3 from '../assets/images/creampuff3.png';
-import creamPuff4 from '../assets/images/creampuff4.png';
-import creamPuff5 from '../assets/images/creampuff5.png';
+import creamPuff1 from '@/assets/images/creampuff1.png';
+import creamPuff2 from '@/assets/images/creampuff2.png';
+import creamPuff3 from '@/assets/images/creampuff3.png';
+import creamPuff4 from '@/assets/images/creampuff4.png';
+import creamPuff5 from '@/assets/images/creampuff5.png';
 
 </script>
 
