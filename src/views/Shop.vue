@@ -18,8 +18,10 @@
   <hr />
   <div style="display: flex; flex-direction: row; padding: 1% 10%">
     <div style="background-color: #93C47D; width: 40%; border-radius: 10px; font-size: 1.5rem;">
-      <p>Categories</p>
-      <p class="category" v-for="category in this.categories" :key="category.id" style="cursor: pointer" @click="filterItems(category.name)">
+      <h4 style="color:white">Categories</h4>
+      <button @click = "reset"></button>
+      <p class="category" v-for="category in categories" :key="category.id" style="cursor: pointer"
+        @click="filterItems(category)">
         {{ category }}
       </p>
     </div>
@@ -66,6 +68,7 @@ export default {
         // { id: 12, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
         // { id: 13, name: 'Creampuff', price: 50, category: 'food', img: creamPuff3 },
       ],
+      filteredDisplay: [],
       showMessage: false,
       message: "Test",
       image: "",
@@ -92,7 +95,11 @@ export default {
       }, 2000);
     },
     filterItems(category){
-
+      let a = category.toLowerCase();
+      console.log('Filter: ' + a)
+      this.filteredDisplay = this.items.filter((item) => {
+        return item.category == a;
+      })
     }
   }
 }
@@ -104,17 +111,21 @@ hr {
 }
 
 .category{
-  width: 70%;
-  height: 40px;
-  text-align: center;
-  border-radius: 10px;
-  margin: 20px auto;
+  width: 85%;
+  height: 25px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin: 5px auto;
   background-color: white;
-  transition: all 0.1s ease-in;
+  transition: all 0.2s ease-in-out;
 }
 
 .category:hover {
-  scale: 1.1;
+  scale: 1.08;
+  background-color: #bdbdbd;
 }
 
 .content {
