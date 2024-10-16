@@ -5,6 +5,13 @@ import creamPuff2 from '@/assets/images/creampuff2.png';
 import creamPuff3 from '@/assets/images/creampuff3.png';
 import creamPuff4 from '@/assets/images/creampuff4.png';
 import creamPuff5 from '@/assets/images/creampuff5.png';
+import taho from '@/assets/images/taho.jpg';
+import eggOwl from '@/assets/images/eggowl.jpg';
+import pumpkinLatte from '@/assets/images/pumpkin_spice_latte.jpg';
+import mangoShake from '@/assets/images/mango_shake.jpg';
+import brownSugarMilktea from '@/assets/images/brown_sugar_milktea.jpg';
+import lemonade from '@/assets/images/lemonade.jpg';
+import bukoJuice from '@/assets/images/buko_juice.jpeg';
 </script>
 
 <template>
@@ -62,14 +69,13 @@ export default {
         { id: 3, name: 'Creampuff', price: 50, category: 'food', img: creamPuff3 },
         { id: 4, name: 'Strawberry Creampuff', price: 70, category: 'food', img: creamPuff4 },
         { id: 5, name: 'Puffy Creampuff', price: 65, category: 'food', img: creamPuff5 },
-        { id: 6, name: 'Banana Creampuff', price: 55, category: 'food', img: creamPuff1 },
-        { id: 7, name: 'Frosted Creampuff', price: 65, category: 'food', img: creamPuff2 },
-        { id: 8, name: 'Creampuff', price: 70, category: 'food', img: creamPuff3 },
-        { id: 9, name: 'Strawberry Creampuff', price: 80, category: 'food', img: creamPuff4 },
-        { id: 10, name: 'Puffy Creampuff', price: 80, category: 'food', img: creamPuff5 },
-        { id: 11, name: 'Banana Creampuff', price: 75, category: 'food', img: creamPuff1 },
-        { id: 12, name: 'Frosted Creampuff', price: 80, category: 'food', img: creamPuff2 },
-        { id: 13, name: 'Creampuff', price: 90, category: 'food', img: creamPuff3 },
+        { id: 6, name: 'Taho', price: 65, category: 'dessert', img: taho },
+        { id: 7, name: 'Egg Owl', price: 10000, category: 'food', img: eggOwl },
+        { id: 8, name: 'Mango Shake', price: 80, category: 'drink', img: mangoShake },
+        { id: 9, name: 'Pumpkin Spice Latte', price: 200, category: 'drink', img: pumpkinLatte },
+        { id: 10, name: 'Brown Sugar Milk Tea', price: 150, category: 'drink', img: brownSugarMilktea},
+        { id: 11, name: 'Lemonade', price: 60, category: 'drink', img: lemonade },
+        { id: 12, name: 'Buko Juice', price: 100, category: 'drink', img: bukoJuice },
       ],
       filteredDisplay: [],
       showMessage: false,
