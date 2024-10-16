@@ -41,10 +41,10 @@ export default {
   data() {
     return {
       items: [
-        { id: 1, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
-        { id: 2, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
+        { id: 1, name: 'Banana Creampuff', price: 50, category: 'creampuff', img: creamPuff1 },
+        { id: 2, name: 'Frosted Creampuff', price: 50, category: 'creampuff', img: creamPuff2 },
         { id: 3, name: 'Creampuff', price: 50, category: 'food', img: creamPuff3 },
-        { id: 4, name: 'Creampuff', price: 50, category: 'food', img: creamPuff4 },
+        { id: 4, name: 'Strawberry Creampuff', price: 50, category: 'food', img: creamPuff4 },
         { id: 5, name: 'Creampuff', price: 50, category: 'food', img: creamPuff5 },
         { id: 6, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
         { id: 7, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
@@ -52,8 +52,8 @@ export default {
         { id: 9, name: 'Creampuff', price: 50, category: 'food', img: creamPuff4 },
         { id: 10, name: 'Creampuff', price: 50, category: 'food', img: creamPuff5 },
         { id: 11, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
-        { id: 12, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
-        { id: 13, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
+        { id: 12, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
+        { id: 13, name: 'Creampuff', price: 50, category: 'food', img: creamPuff3 },
       ],
       showMessage: false,
       message: "Test",
@@ -116,15 +116,20 @@ hr {
   row-gap: 20px;
 }
 .itemCard {
-  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 10px;
   font-size: 0.7rem;
-  height: 300px;
+  min-height: 300px;
   width: 200px;
   border-radius: 10px;
   background-color: rgb(255, 255, 202);
-  transition: all 0.1s ease-in;
+  transition: all 0.2s ease-in-out;
 }
 .itemCard:hover {
-  scale: 1.1;
+  scale: 1.08;
+  background-color: rgb(219, 219, 167);
 }
 </style>
