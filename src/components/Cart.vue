@@ -37,7 +37,7 @@
               </tr>
               <tr style="position: sticky; bottom: 0">
                 <td colspan="4"></td>
-                <td>₱1800</td>
+                <td>₱{{ this.cart.reduce((total, item) => total + (item.quantity * item.price), 0)  }}</td>
                 <td></td>
               </tr>
           </tbody>
