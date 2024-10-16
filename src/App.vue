@@ -120,7 +120,7 @@ body {
   cursor: pointer;
   border-radius: 10px;
   width: 8%;
-
+  height: 30px;
   background-color: #ff4032;
   border: none;
   font-size: large;
