@@ -7,12 +7,17 @@
     <router-link to="profile" class="navbar-item">Profile</router-link>
     <router-link to="signup" class="navbar-item">Signup</router-link>
     <router-link to="login" class="navbar-item">Login</router-link>
-    <a id="cart" class="navbar-item" @click="toggleCart()"><i class="fa-solid fa-cart-shopping"></i><span v-if="cart.length" class="red-ping">{{ cart.length }}</span></a>
+    <a id="cart" class="navbar-item" @click="toggleCart()">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span v-if="cart.length" class="red-ping">
+        {{ cart.length }}
+      </span>
+    </a>
   </div>
 
   <div class="container" @click.self="hideCart()">
     <transition>
-      <router-view @addItem="addItem"/>
+      <router-view @addItem="addItem" />
     </transition>
     <transition>
       <Cart v-if="displayCart" @closeCart="hideCart()" :cart="cart" @removeItem="removeItem"/>
@@ -46,11 +51,21 @@ export default {
       cart.classList.remove('router-link-exact-active');
     },
     addItem(item) {
-      item.quantity = 1
-      this.cart.push(item);
+      let itemExists = this.cart.some((cartItem) => item.id === cartItem.id);
+      console.log('Item exists in cart: ', itemExists);
+      if (itemExists) {
+        console.log('App.vue item count before:', item.quantity);
+        // this.cart[item.id].quantity += 1;
+        this.cart.some((cartItem) => {
+          item.id === cartItem.id;
+          item.quantity += 1;
+        });
+        console.log('App.vue item count after:', item.quantity);
+      }
+      else this.cart.push(item);
     },
-    removeItem(id){
-    this.cart = this.cart.filter(item => {
+    removeItem(id) {
+      this.cart = this.cart.filter(item => {
         return item.id != id
       })
     }
@@ -69,11 +84,11 @@ h1 {
 
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 100vh; /* used for the background to fill the whole page */
   font-family: "Comfortaa";
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: linear-gradient(white, #93c47dff);
+  background-image: linear-gradient(white, rgb(197, 230, 180), #93c47dff);
 }
 
 .cart {
@@ -94,7 +109,7 @@ body {
   width: 50vw;
 }
 
-.cart-btn{
+.cart-btn {
   font-size: 1.2rem;
   font-weight: bold;
   padding: 5px;
@@ -112,7 +127,7 @@ body {
   opacity: 0;
 }
 
-.content{
+.content {
   padding: 0 2%;
 }
 
@@ -124,7 +139,7 @@ body {
   background-color: #ff4032;
   border: none;
   font-size: large;
-  color:white;
+  color: white;
 }
 
 #nav a.router-link-exact-active {
@@ -158,7 +173,8 @@ body {
     margin: auto;
   }
 
-  .navbar, .navbar-item{
+  .navbar,
+  .navbar-item {
     padding: 0 1rem !important;
     font-size: 1rem !important;
   }
@@ -285,7 +301,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 </style>
