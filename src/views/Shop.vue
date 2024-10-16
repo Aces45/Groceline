@@ -34,23 +34,13 @@ import bukoJuice from '@/assets/images/buko_juice.jpeg';
       </p>
     </div>
 
-    <div v-if="isFiltered" class="content">
-      <div v-for="item in filteredDisplay" class="itemCard" :key="item.id">
-        <h1>{{ item.name }}</h1>
-        <h3>{{ item.category }}</h3>
-        <img :src="item.img" height="200px" width="200px"/>
-        <h1>₱{{ item.price }}</h1>
-        <button @click="addToCart(item)">Add to Cart</button>
-      </div>
-    </div>
-
-    <div v-else class="content">
-      <div v-for="item in items" class="itemCard" :key="item.id">
-        <h1>{{ item.name }}</h1>
-        <h3>{{ item.category }}</h3>
-        <img :src="item.img" width="200px" height="200px" />
-        <h1>₱{{ item.price }}</h1>
-        <button @click="addToCart(item)">Add to Cart</button>
+    <div class="content">
+      <div v-for="item in (filteredItems.length || isFiltered ? filteredItems : items)" class="itemCard" :key="item.id">
+          <h1>{{ item.name }}</h1>
+          <h3>{{ item.category }}</h3>
+          <img :src="item.img" height="200px" width="200px"/>
+          <h1>₱{{ item.price }}</h1>
+          <button @click="addToCart(item)">Add to Cart</button>
       </div>
     </div>
 
