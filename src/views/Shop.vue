@@ -83,7 +83,7 @@ export default {
       // temporary quantity value
       item.quantity = 1;
 
-      // triggers addItem event to parent component
+      // triggers addItem event to parent component (App.vue)
       this.$emit('addItem', item);
 
       // sets message and displays it
