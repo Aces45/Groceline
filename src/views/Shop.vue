@@ -27,7 +27,7 @@ import bukoJuice from '@/assets/images/buko_juice.jpeg';
   <div style="display: flex; flex-direction: row; padding: 1% 10%">
     <div style="background-color: #93C47D; width: 40%; border-radius: 10px; font-size: 1.5rem;">
       <h4 style="color:white">Categories</h4>
-      <button @click = "this.isFiltered = false">Reset</button>
+      <button @click = "isFiltered = false; filteredItems = []">Reset</button>
       <p class="category" v-for="category in categories" :key="category.id" style="cursor: pointer"
         @click="filterItems(category.toLowerCase())">
         {{ category }}
