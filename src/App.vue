@@ -17,7 +17,7 @@
 
   <div class="container" @click.self="hideCart()">
     <transition>
-      <router-view @addItem="addItem" />
+      <router-view @addItem="addItem"/>
     </transition>
     <transition>
       <Cart v-if="displayCart" @closeCart="hideCart()" :cart="cart" @removeItem="removeItem"/>
@@ -68,7 +68,7 @@ export default {
       this.cart = this.cart.filter(item => {
         return item.id != id
       })
-    }
+    },
   }
 }
 </script>

@@ -27,15 +27,15 @@ import bukoJuice from '@/assets/images/buko_juice.jpeg';
   <div style="display: flex; flex-direction: row; padding: 1% 10%">
     <div style="background-color: #93C47D; width: 40%; border-radius: 10px; font-size: 1.5rem;">
       <h4 style="color:white">Categories</h4>
-      <button @click = "reset">Reset</button>
+      <button @click = "this.isFiltered = false">Reset</button>
       <p class="category" v-for="category in categories" :key="category.id" style="cursor: pointer"
-        @click="filterItems(category)">
+        @click="filterItems(category.toLowerCase())">
         {{ category }}
       </p>
     </div>
 
-    <div v-if="filteredDisplay.length" class="content">
-      <div v-for="item in items" class="itemCard" :key="item.id">
+    <div v-if="isFiltered" class="content">
+      <div v-for="item in filteredDisplay" class="itemCard" :key="item.id">
         <h1>{{ item.name }}</h1>
         <h3>{{ item.category }}</h3>
         <img :src="item.img" width="180px" height="180px" />
@@ -78,6 +78,7 @@ export default {
         { id: 12, name: 'Buko Juice', price: 100, category: 'drink', img: bukoJuice },
       ],
       filteredDisplay: [],
+      isFiltered: false,
       showMessage: false,
       message: "Test",
       image: "",
@@ -104,11 +105,10 @@ export default {
       }, 2000);
     },
     filterItems(category){
-      let a = category.toLowerCase();
-      console.log('Filter: ' + a)
-      this.filteredDisplay = this.items.filter((item) => {
-        return item.category == a;
-      })
+      this.filteredDisplay = this.items.filter(item => {
+        return item.category == category
+      });
+      this.isFiltered = true;
     }
   }
 }
