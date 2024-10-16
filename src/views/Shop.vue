@@ -1,10 +1,10 @@
 <script setup>
 // import images
-// import creamPuff1 from '@/assets/images/creampuff1.png';
-// import creamPuff2 from '@/assets/images/creampuff2.png';
-// import creamPuff3 from '@/assets/images/creampuff3.png';
-// import creamPuff4 from '@/assets/images/creampuff4.png';
-// import creamPuff5 from '@/assets/images/creampuff5.png';
+import creamPuff1 from '@/assets/images/creampuff1.png';
+import creamPuff2 from '@/assets/images/creampuff2.png';
+import creamPuff3 from '@/assets/images/creampuff3.png';
+import creamPuff4 from '@/assets/images/creampuff4.png';
+import creamPuff5 from '@/assets/images/creampuff5.png';
 
 </script>
 
@@ -25,8 +25,8 @@
         {{ category }}
       </p>
     </div>
-    <img src="@/assets/images/creampuff1.png" width="180px" height="180px" />
-    <!-- <div v-if="filteredDisplay.length" class="content">
+
+    <div v-if="filteredDisplay.length" class="content">
       <div v-for="item in items" class="itemCard" :key="item.id">
         <h1>{{ item.name }}</h1>
         <h3>{{ item.category }}</h3>
@@ -42,7 +42,7 @@
         <img :src="item.img" width="180px" height="180px" />
         <button @click="addToCart(item)">Add to Cart</button>
       </div>
-    </div> -->
+    </div>
 
   </div>
 </template>
@@ -54,19 +54,19 @@ export default {
   data() {
     return {
       items: [
-        { id: 1, name: 'Banana Creampuff', price: 50, category: 'creampuff', img: 'src/assets/images/creampuff1.png' },
-        // { id: 2, name: 'Frosted Creampuff', price: 50, category: 'creampuff', img: creamPuff2 },
-        // { id: 3, name: 'Creampuff', price: 50, category: 'food', img: creamPuff3 },
-        // { id: 4, name: 'Strawberry Creampuff', price: 50, category: 'food', img: creamPuff4 },
-        // { id: 5, name: 'Creampuff', price: 50, category: 'food', img: creamPuff5 },
-        // { id: 6, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
-        // { id: 7, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
-        // { id: 8, name: 'Creampuff', price: 50, category: 'food', img: creamPuff3 },
-        // { id: 9, name: 'Creampuff', price: 50, category: 'food', img: creamPuff4 },
-        // { id: 10, name: 'Creampuff', price: 50, category: 'food', img: creamPuff5 },
-        // { id: 11, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
-        // { id: 12, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
-        // { id: 13, name: 'Creampuff', price: 50, category: 'food', img: creamPuff3 },
+        { id: 1, name: 'Banana Creampuff', price: 50, category: 'creampuff', img: creamPuff1 },
+        { id: 2, name: 'Frosted Creampuff', price: 50, category: 'creampuff', img: creamPuff2 },
+        { id: 3, name: 'Creampuff', price: 50, category: 'food', img: creamPuff3 },
+        { id: 4, name: 'Strawberry Creampuff', price: 50, category: 'food', img: creamPuff4 },
+        { id: 5, name: 'Creampuff', price: 50, category: 'food', img: creamPuff5 },
+        { id: 6, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
+        { id: 7, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
+        { id: 8, name: 'Creampuff', price: 50, category: 'food', img: creamPuff3 },
+        { id: 9, name: 'Creampuff', price: 50, category: 'food', img: creamPuff4 },
+        { id: 10, name: 'Creampuff', price: 50, category: 'food', img: creamPuff5 },
+        { id: 11, name: 'Creampuff', price: 50, category: 'food', img: creamPuff1 },
+        { id: 12, name: 'Creampuff', price: 50, category: 'food', img: creamPuff2 },
+        { id: 13, name: 'Creampuff', price: 50, category: 'food', img: creamPuff3 },
       ],
       filteredDisplay: [],
       showMessage: false,
