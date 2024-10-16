@@ -23,7 +23,8 @@
         {{ category }}
       </p>
     </div>
-    <div class="content">
+    <img src="@/assets/images/creampuff1.png" width="180px" height="180px" />
+    <!-- <div v-if="filteredDisplay.length" class="content">
       <div v-for="item in items" class="itemCard" :key="item.id">
         <h1>{{ item.name }}</h1>
         <h3>{{ item.category }}</h3>
