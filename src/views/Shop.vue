@@ -5,7 +5,6 @@ import creamPuff2 from '@/assets/images/creampuff2.png';
 import creamPuff3 from '@/assets/images/creampuff3.png';
 import creamPuff4 from '@/assets/images/creampuff4.png';
 import creamPuff5 from '@/assets/images/creampuff5.png';
-
 </script>
 
 <template>
@@ -14,7 +13,9 @@ import creamPuff5 from '@/assets/images/creampuff5.png';
       <Modal v-if="showMessage" :message = "message" :image = "image"/>
     </transition>
   </div>
+
   <h1>Shop</h1>
+
   <hr />
   <div style="display: flex; flex-direction: row; padding: 1% 10%">
     <div style="background-color: #93C47D; width: 40%; border-radius: 10px; font-size: 1.5rem;">
