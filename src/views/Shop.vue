@@ -91,7 +91,6 @@ export default {
       // sets 2s timer for message modal
       setTimeout(() => {
         this.showMessage = false;
-        console.log('Message hidden')
       }, 2000);
     },
     filterItems(category){
