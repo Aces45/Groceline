@@ -60,7 +60,7 @@ export default {
         { id: 4, name: 'Strawberry Creampuff', price: 70, category: 'food', img: creamPuff4 },
         { id: 5, name: 'Puffy Creampuff', price: 65, category: 'food', img: creamPuff5 },
         { id: 6, name: 'Taho', price: 65, category: 'dessert', img: taho },
-        { id: 7, name: 'Egg Owl', price: 10000, category: 'food', img: eggOwl },
+        // { id: 7, name: 'Egg Owl', price: 10000, category: 'food', img: eggOwl },
         { id: 8, name: 'Mango Shake', price: 80, category: 'beverage', img: mangoShake },
         { id: 9, name: 'Pumpkin Spice Latte', price: 200, category: 'beverage', img: pumpkinLatte },
         { id: 10, name: 'Brown Sugar Milk Tea', price: 150, category: 'beverage', img: brownSugarMilktea},
