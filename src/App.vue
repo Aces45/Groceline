@@ -20,7 +20,7 @@
       <router-view @addItem="addItem"/>
     </transition>
     <transition>
-      <Cart v-if="displayCart" @closeCart="hideCart()" :cart="cart" @removeItem="removeItem"/>
+      <Cart v-if="displayCart" @closeCart="hideCart()" :cart="cart" :cartQuantity="cartQuantity" @removeItem="removeItem"/>
     </transition>
   </div>
 </template>
