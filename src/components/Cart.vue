@@ -68,6 +68,9 @@ export default ({
     removeItem(id){
       // in App.vue, triggers the Cart component to run the removeItem() method
       if(confirm('Are you sure you want to remove this item?')) {this.$emit('removeItem', id)}
+    },
+    clearCart(){
+      if(confirm('Are you sure you want to clear the cart?') ){this.$emit('clearCart')}
     }
   },
 })
