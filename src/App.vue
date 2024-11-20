@@ -10,7 +10,7 @@
     <a id="cart" class="navbar-item" @click="toggleCart()">
       <i class="fa-solid fa-cart-shopping"></i>
       <span v-if="cart.length" class="red-ping">
-        {{ cart.length }}
+        {{ cartQuantity }}
       </span>
     </a>
   </div>
@@ -69,6 +69,16 @@ export default {
         return item.id != id
       })
     },
+  },
+  computed: {
+    cartQuantity(){
+      let total = 0
+      for (let item of this.cart){
+        console.log(`Item quantity: ${item.quantity}`)
+        total += item.quantity
+      }
+      return total
+    }
   }
 }
 </script>
