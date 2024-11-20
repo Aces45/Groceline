@@ -283,7 +283,8 @@ body {
 }
 
 .red-ping {
-  width: 1.5rem;
+  width: auto;
+  min-width: 1.5rem;
   margin: 0.15rem;
   border-radius: 1.5rem;
   background-color: #ff2d1e;
