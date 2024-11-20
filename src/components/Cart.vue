@@ -52,7 +52,7 @@
 <script>
 
 export default ({
-  props: ['cart'],
+  props: ['cart','cartQuantity'],
   data() {
     return{
       Test: 'test'
