@@ -5,9 +5,9 @@
     display: flex; justify-content: space-around;">
       <p></p>
       <p></p>
-      <h2 v-if="this.cart.length == 0">Your cart is empty.</h2>
-      <h2 v-else-if="this.cart.length == 1">You have 1 item in your cart.</h2>
-      <h2 v-else>You have {{ this.cart.length }} items in your cart.</h2>
+      <h2 v-if="cartQuantity == 0">Your cart is empty.</h2>
+      <h2 v-else-if="cartQuantity == 1">You have 1 item in your cart.</h2>
+      <h2 v-else>You have {{ cartQuantity }} items in your cart.</h2>
       <button class="close-btn" @click="closeCart()" style="justify-self: end; margin: 35px"><i class="fa-solid fa-xmark"></i></button>
     </div>
       <table v-if="this.cart.length > 0">
