@@ -155,6 +155,10 @@ body {
   color: white;
 }
 
+.close-btn:hover{
+  background-color: #b12d24;
+}
+
 #nav a.router-link-exact-active {
   /* color: #42b983; */
   color: #93c47dff;
