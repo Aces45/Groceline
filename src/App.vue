@@ -20,7 +20,7 @@
       <router-view @addItem="addItem"/>
     </transition>
     <transition>
-      <Cart v-if="displayCart" @closeCart="hideCart()" :cart="cart" :cartQuantity="cartQuantity" @removeItem="removeItem"/>
+      <Cart v-if="displayCart" @closeCart="hideCart()" @clearCart="clearCart()" :cart="cart" :cartQuantity="cartQuantity" @removeItem="removeItem"/>
     </transition>
   </div>
 </template>
@@ -69,6 +69,9 @@ export default {
         return item.id != id
       })
     },
+    clearCart(){
+      this.cart = []
+    }
   },
   computed: {
     cartQuantity(){
