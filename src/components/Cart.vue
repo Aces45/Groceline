@@ -36,7 +36,7 @@
                   <td><button class="close-btn" @click="removeItem(item.id)" style="margin: 0; height: 40px; width: 40px; cursor: pointer;"><i class="fa-solid fa-trash"></i></button></td>
               </tr>
               <tr style="position: sticky; bottom: 0">
-                <td colspan="4"></td>
+                <td colspan="4">Total</td>
                 <td>₱{{ this.cart.reduce((total, item) => total + (item.quantity * item.price), 0)  }}</td>
                 <td></td>
               </tr>
