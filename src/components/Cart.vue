@@ -36,9 +36,11 @@
                   <td><button class="close-btn" @click="removeItem(item.id)" style="margin: 0; height: 40px; width: 40px; cursor: pointer;"><i class="fa-solid fa-trash"></i></button></td>
               </tr>
               <tr style="position: sticky; bottom: 0">
-                <td colspan="4">Total</td>
-                <td>₱{{ this.cart.reduce((total, item) => total + (item.quantity * item.price), 0)  }}</td>
+                <td colspan="2">Total</td>
+                <td>{{ cartQuantity }}</td>
                 <td></td>
+                <td>₱{{ this.cart.reduce((total, item) => total + (item.quantity * item.price), 0)  }}</td>
+                <td><button class="close-btn" style="width:auto" @click="clearCart()">Clear cart</button></td>
               </tr>
           </tbody>
       </table>
