@@ -51,18 +51,12 @@ export default {
       cart.classList.remove('router-link-exact-active');
     },
     addItem(item) {
-      let itemExists = this.cart.some((cartItem) => item.id === cartItem.id);
-      console.log('Item exists in cart: ', itemExists);
-      if (itemExists) {
-        console.log('App.vue item count before:', item.quantity);
-        // this.cart[item.id].quantity += 1;
-        this.cart.some((cartItem) => {
-          item.id === cartItem.id;
-          item.quantity += 1;
-        });
-        console.log('App.vue item count after:', item.quantity);
-      }
-      else this.cart.push(item);
+        const cartItem = this.cart.find((cartItem) => item.id === cartItem.id);
+        if(cartItem) { cartItem.quantity += 1 }
+        else{
+          item.quantity = 1;
+          this.cart.push(item);
+        }
     },
     removeItem(id) {
       this.cart = this.cart.filter(item => {

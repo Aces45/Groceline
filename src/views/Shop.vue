@@ -77,9 +77,6 @@ export default {
   },
   methods: {
     addToCart(item) {
-      // temporary quantity value
-      item.quantity = 1;
-
       // triggers addItem event to parent component (App.vue)
       this.$emit('addItem', item);
 
