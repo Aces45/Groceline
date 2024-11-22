@@ -25,17 +25,23 @@ import bukoJuice from '@/assets/images/buko_juice.jpeg';
 
   <hr />
   <div style="display: flex; flex-direction: row; padding: 1% 10%">
-    <div style="background-color: #93C47D; width: 40%; border-radius: 10px; font-size: 1.5rem;">
+    <div style="background-color: #93C47D; width: 40%; border-radius: 10px; font-size: 1.5rem; max-width: 320px">
+
+      <h4>Search</h4>
+      <input type="text" placeholder="Search" v-model="searchTerm"/>
+
       <h4 style="color:white">Categories</h4>
-      <button @click = "isFiltered = false; filteredItems = []">Reset</button>
+      <button class="btn-close" @click = "category = ''; searchTerm =''">Clear</button>
+
       <p class="category" v-for="category in categories" :key="category.id" style="cursor: pointer"
-        @click="filterItems(category.toLowerCase())">
+        @click="this.category = category">
         {{ category }}
       </p>
     </div>
 
     <div class="content">
-      <div v-for="item in (filteredItems.length || isFiltered ? filteredItems : items)" class="itemCard" :key="item.id">
+      <h1 v-if="filteredItems.length === 0">No items found.</h1>
+      <div v-else v-for="item in (filteredItems.length ? filteredItems : items)" class="itemCard" :key="item.id">
           <h1>{{ item.name }}</h1>
           <h3>{{ item.category }}</h3>
           <img :src="item.img" height="200px" width="200px"/>
@@ -58,7 +64,7 @@ export default {
         { id: 2, name: 'Frosted Creampuff', price: 60, category: 'creampuff', img: creamPuff2 },
         { id: 3, name: 'Creampuff', price: 50, category: 'food', img: creamPuff3 },
         { id: 4, name: 'Strawberry Creampuff', price: 70, category: 'food', img: creamPuff4 },
-        { id: 5, name: 'Puffy Creampuff', price: 65, category: 'food', img: creamPuff5 },
+        { id: 5, name: 'Puffy Creampuff', price: 65, category: 'food, creampuff', img: creamPuff5 },
         { id: 6, name: 'Taho', price: 65, category: 'dessert', img: taho },
         // { id: 7, name: 'Egg Owl', price: 10000, category: 'food', img: eggOwl },
         { id: 8, name: 'Mango Shake', price: 80, category: 'beverage', img: mangoShake },
@@ -108,6 +114,24 @@ export default {
 hr {
   border: 1px solid rgb(177, 177, 177);
 }
+h1{
+  text-align: center;
+}
+h4 {
+  color: white;
+  margin: 10px
+}
+
+input, select {
+display: block;
+  margin: auto;
+  padding: 10px 6px;
+  width: 80%;
+  box-sizing: border-box;
+  border: 1px solid #93c47dff;
+  border-radius: 10px;
+  color: #555;
+}
 
 .category{
   width: 85%;
@@ -128,6 +152,7 @@ hr {
 }
 
 .content {
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
