@@ -21,7 +21,7 @@ import bukoJuice from '@/assets/images/buko_juice.jpeg';
     </transition>
   </div>
 
-  <h1>Shop <span v-if="category"> - {{ category }}</span></h1>
+  <h1>Shop <span v-if="category"> - {{ categoryTerm }}</span></h1>
 
   <hr />
   <div style="display: flex; flex-direction: row; padding: 1% 10%">
@@ -31,7 +31,7 @@ import bukoJuice from '@/assets/images/buko_juice.jpeg';
       <input type="text" placeholder="Search" v-model="searchTerm"/>
 
       <h4 style="color:white">Categories</h4>
-      <button class="btn-close" @click = "category = ''; searchTerm =''">Clear</button>
+      <button class="btn-close" @click = "categoryTerm = ''; searchTerm =''">Clear</button>
 
       <p class="category" v-for="category in categories" :key="category.id" style="cursor: pointer"
         @click="categoryTerm = category; console.log('Category - ', categoryTerm)">
