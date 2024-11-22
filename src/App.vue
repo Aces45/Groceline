@@ -51,8 +51,8 @@ export default {
       cart.classList.remove('router-link-exact-active');
     },
     addItem(item) {
-        const cartItem = this.cart.find((cartItem) => item.id === cartItem.id);
-        if(cartItem) { cartItem.quantity += 1 }
+        const itemExists = this.cart.find((cartItem) => item.id === cartItem.id);
+        if(itemExists) { cartItem.quantity += 1 }
         else{
           item.quantity = 1;
           this.cart.push(item);
