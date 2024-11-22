@@ -133,10 +133,10 @@ body {
   padding: 0 2%;
 }
 
-.close-btn {
+.btn-close {
   cursor: pointer;
+  width:auto;
   border-radius: 10px;
-  width: 8%;
   height: 30px;
   background-color: #ff4032;
   border: none;
@@ -144,7 +144,7 @@ body {
   color: white;
 }
 
-.close-btn:hover{
+.btn-close:hover{
   background-color: #b12d24;
 }
 
