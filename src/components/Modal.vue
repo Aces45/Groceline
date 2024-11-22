@@ -16,6 +16,7 @@ export default ({
 .modal{
     z-index: 999;
     height: auto;
+    padding: 10px;
     width: 500px;
     position: fixed;
     margin-top: 1rem;
