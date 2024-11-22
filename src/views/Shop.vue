@@ -21,7 +21,7 @@ import bukoJuice from '@/assets/images/buko_juice.jpeg';
     </transition>
   </div>
 
-  <h1>Shop</h1>
+  <h1>Shop <span v-if="category"> - {{ category }}</span></h1>
 
   <hr />
   <div style="display: flex; flex-direction: row; padding: 1% 10%">
