@@ -89,12 +89,14 @@ export default {
       setTimeout(() => {
         this.showMessage = false;
       }, 2000);
-    },
-    filterItems(category){
-      this.filteredItems = this.items.filter(item => {
-        return item.category == category
-      });
-      this.isFiltered = true;
+    }
+  },
+  computed: {
+    filteredItems(){
+      return this.items.filter(item => {
+        return item.name.toLowerCase().indexOf(this.searchTerm.toLowerCase()) != -1 &&
+               item.category.toLowerCase().indexOf(this.category.toLowerCase()) !== -1;
+      })
     }
   }
 }
