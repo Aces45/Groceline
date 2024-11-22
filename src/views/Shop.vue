@@ -34,7 +34,7 @@ import bukoJuice from '@/assets/images/buko_juice.jpeg';
       <button class="btn-close" @click = "category = ''; searchTerm =''">Clear</button>
 
       <p class="category" v-for="category in categories" :key="category.id" style="cursor: pointer"
-        @click="this.category = category">
+        @click="this.category = category; console.log('Category - ', category)">
         {{ category }}
       </p>
     </div>
@@ -101,6 +101,7 @@ export default {
   },
   computed: {
     filteredItems(){
+      console.log('Filtered Items changed');
       return this.items.filter(item => {
         return item.name.toLowerCase().indexOf(this.searchTerm.toLowerCase()) != -1 &&
                item.category.toLowerCase().indexOf(this.category.toLowerCase()) !== -1;
