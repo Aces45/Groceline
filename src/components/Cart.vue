@@ -54,7 +54,7 @@
 <script>
 
 export default ({
-  props: ['cart','cartQuantity'],
+  props: ['cart', 'cartQuantity'],
   data() {
     return{
       Test: 'test'
@@ -72,7 +72,7 @@ export default ({
     clearCart(){
       if(confirm('Are you sure you want to clear the cart?') ){this.$emit('clearCart')}
     }
-  },
+  }
 })
 </script>
 
