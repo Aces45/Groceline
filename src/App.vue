@@ -75,12 +75,7 @@ export default {
   },
   computed: {
     cartQuantity(){
-      let total = 0
-      for (let item of this.cart){
-        console.log(`Item quantity: ${item.quantity}`)
-        total += item.quantity
-      }
-      return total
+      return this.cart.reduce((total, item) => total + item.quantity, 0)
     }
   }
 }
