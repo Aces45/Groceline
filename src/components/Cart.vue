@@ -8,7 +8,7 @@
       <h2 v-if="cartQuantity == 0">Your cart is empty.</h2>
       <h2 v-else-if="cartQuantity == 1">You have 1 item in your cart.</h2>
       <h2 v-else>You have {{ cartQuantity }} items in your cart.</h2>
-      <button class="close-btn" @click="closeCart()" style="justify-self: end; margin: 35px"><i class="fa-solid fa-xmark"></i></button>
+      <button class="btn-close" @click="closeCart()" style="justify-self: end; margin: 35px"><i class="fa-solid fa-xmark"></i></button>
     </div>
       <table v-if="this.cart.length > 0">
           <thead>
@@ -33,14 +33,14 @@
                   </td>
                   <td>₱{{ item.price }}</td>
                   <td>₱{{ item.quantity * item.price }}</td>
-                  <td><button class="close-btn" @click="removeItem(item.id)" style="margin: 0; height: 40px; width: 40px; cursor: pointer;"><i class="fa-solid fa-trash"></i></button></td>
+                  <td><button class="btn-close" @click="removeItem(item.id)" style="margin: 0; height: 40px; width: 40px; cursor: pointer;"><i class="fa-solid fa-trash"></i></button></td>
               </tr>
               <tr style="position: sticky; bottom: 0">
                 <td colspan="2">Total</td>
                 <td>{{ cartQuantity }}</td>
                 <td></td>
                 <td>₱{{ this.cart.reduce((total, item) => total + (item.quantity * item.price), 0)  }}</td>
-                <td><button class="close-btn" style="width:auto" @click="clearCart()">Clear cart</button></td>
+                <td><button class="btn-close" @click="clearCart()">Clear cart</button></td>
               </tr>
           </tbody>
       </table>
