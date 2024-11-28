@@ -27,11 +27,12 @@ import bukoJuice from '@/assets/images/buko_juice.jpeg';
   <div style="display: flex; flex-direction: row; padding: 1% 10%">
     <div style="background-color: #93C47D; width: 40%; border-radius: 10px; font-size: 1.5rem; max-width: 320px">
 
+      <button v-if="categoryTerm || searchTerm" class="btn-close" @click = "categoryTerm = ''; searchTerm =''" style="margin-top:10px">Clear</button>
+
       <h4>Search</h4>
       <input type="text" placeholder="Search" v-model="searchTerm"/>
 
       <h4 style="color:white">Categories</h4>
-      <button class="btn-close" @click = "categoryTerm = ''; searchTerm =''">Clear</button>
 
       <p class="category" v-for="category in categories" :key="category.id" style="cursor: pointer"
         @click="categoryTerm = category; console.log('Category - ', categoryTerm)">
